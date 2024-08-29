@@ -2,7 +2,7 @@
 import dotenv from 'dotenv'
 import path from 'path'
 import cookieParser from 'cookie-parser';
-// import cors from 'cors';
+import cors from 'cors';
 //import authroutes
 import authRoutes from './routes/auth.routes.js'
 import messageRoutes from './routes/message.routes.js'
@@ -10,7 +10,7 @@ import userRoutes from './routes/user.routes.js'
 
 import connectToMongoDB from './db/connectToMongoDB.js';
 import {app, server} from './socket/socket.js'
-
+app.use(cors());
 
 
 
