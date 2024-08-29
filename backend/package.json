@@ -1,0 +1,24 @@
+{
+  "name": "wechat",
+  "version": "1.0.0",
+  "description": "first npm vite#latest .\r then npm i \r now as usal we were indstlling the npm init in backebd folder now we will instaall in root because it will be east to depoloy",
+  "main": "server.js",
+  "scripts": {
+    "server": "nodemon server.js ",
+		"build": "npm install",
+    "start": "node server.js"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.2",
+    "socket.io": "^4.7.5"
+  }
+}
