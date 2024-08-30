@@ -5,9 +5,34 @@
     <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WeChat</title>
+
+    <style>
+      /* Basic styles for the footer */
+      footer {
+        background-color: #f8f9fa;
+        color: #6c757d;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+
   </head>
   <body>
     <div id="root"></div>
+
+     <!-- Footer with copyright notice -->
+     <footer>
+      <p>&copy; <span id="year"></span> DevFurqan. All rights reserved.</p>
+    </footer>
     <script type="module" src="/src/main.jsx"></script>
+    
+    <script>
+      // JavaScript to dynamically set the current year in the footer
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
   </body>
 </html>
