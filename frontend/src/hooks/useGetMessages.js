@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import useConversation from "../zustand/useConversation";
 import toast from "react-hot-toast";
+import { apiurl } from "../constents/constents";
 
 const useGetMessages = () => {
 	const [loading, setLoading] = useState(false);
@@ -11,7 +12,7 @@ const useGetMessages = () => {
 			setLoading(true);
 			try {
                 const token = localStorage.getItem('token');
-				const res = await fetch(`http://localhost:3001/api/messages/${selectedConversation._id}`,{
+				const res = await fetch(`${apiurl}/api/messages/${selectedConversation._id}`,{
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",

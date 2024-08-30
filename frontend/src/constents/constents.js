@@ -1,1 +1,1 @@
-export const apiurl= "http://localhost:3001"
+export const apiurl= "https://wechat-backend-b3gx.onrender.com"
