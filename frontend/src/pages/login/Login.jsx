@@ -17,8 +17,8 @@ const login = () => {
   return (
     <div>
       <div className='text-center'>
-      <h1 className='text-5xl pb-5  font-bold text-white'>Welcome Back To  <span className='text-5xl text-gradient-blue'>WeChat</span></h1>
-        <p className='text-3xl  font-light  text-white items-center'>Enter your credentials to login</p>
+      <h1 className='text-5xl   font-bold text-white'>Welcome Back To  <span className='text-5xl text-gradient-blue'>WeChat</span></h1>
+        <p className='text-3xl  font-light pb-10 text-white items-center'>Enter your credentials to login</p>
       
       </div>
     
