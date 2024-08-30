@@ -3,9 +3,21 @@ import User from "../models/user.model.js";
 
 const protectRoute = async (req, res, next) => {
 	try {
-		console.log('Cookies:', req.cookies)
-		const token = req.cookies.jwt;
-		// console.log('Token from cookies:', token);
+		// console.log('Cookies:', req.cookies)
+		// const token = req.cookies.jwt;
+		// // console.log('Token from cookies:', token);
+
+// Check if the Authorization header is present and starts with 'Bearer'
+const authHeader = req.headers.authorization;
+
+if (!authHeader || !authHeader.startsWith('Bearer ')) {
+	return res.status(401).json({ error: 'Unauthorized - No Token Provided' });
+  }
+
+   // Extract the token from the Authorization header
+   const token = authHeader.split(' ')[1];
+   
+   console.log("token from backend ",token) 
 
 		if (!token) {
 			return res.status(401).json({ error: "Unauthorized - No Token Provided" });

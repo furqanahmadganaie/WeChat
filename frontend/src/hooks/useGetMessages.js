@@ -10,8 +10,8 @@ const useGetMessages = () => {
 		const getMessages = async () => {
 			setLoading(true);
 			try {
-                const token = localStorage.getItem('chat-user');
-				const res = await fetch(`/api/messages/${selectedConversation._id}`,{
+                const token = localStorage.getItem('token');
+				const res = await fetch(`http://localhost:3001/api/messages/${selectedConversation._id}`,{
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
@@ -19,8 +19,10 @@ const useGetMessages = () => {
                     }
                 });
 				const data = await res.json();
-				if (data.error) throw new Error(data.error);
+				if (!res.ok) throw new Error("failed to fetch messages");
+				
 				setMessages(data);
+
 			} catch (error) {
 				toast.error(error.message);
 			} finally {

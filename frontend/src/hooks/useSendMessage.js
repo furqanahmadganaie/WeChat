@@ -8,14 +8,26 @@ const useSendMessage = () => {
     const [loading, setLoading] = useState(false);
 	const { messages, setMessages, selectedConversation } = useConversation();
 
+	const token=localStorage.getItem('token');
+	if (!token) {
+        console.error('No token found in localStorage');
+    }
+
 	const sendMessage = async (message) => {
 		setLoading(true);
 		try {
             
-			const res = await fetch(`/api/messages/send/${selectedConversation._id}`, {
+			const res = await fetch(`http://localhost:3001/api/messages/send/${selectedConversation._id}`, {
+
+
+
+
+				
+
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
+					"Authorization": `Bearer ${token}`,
                     
 				},
 				body: JSON.stringify({ message }),
